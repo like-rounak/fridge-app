@@ -13,7 +13,7 @@ uploaded_file = st.file_uploader("Upload an image", type=["jpg", "png", "jpeg"])
 
 if uploaded_file:
     img = Image.open(uploaded_file)
-    st.image(img, caption="Uploaded Image", use_column_width=True)
+    st.image(img, caption="Uploaded Image", use_container_width=True)
 
     # Run prediction
     results = model.predict(img, conf=0.5)
@@ -29,4 +29,4 @@ if uploaded_file:
 
     # Show image with boxes
     results[0].plot()
-    st.image(results[0].plot(), caption="Detections", use_column_width=True)
+    st.image(results[0].plot(), caption="Detections", use_container_width=True)
